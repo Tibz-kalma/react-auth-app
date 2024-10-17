@@ -11,7 +11,7 @@ driver.maximize_window()
 
 try:
     # Step 2: Navigate to the photo/album listing page
-    driver.get("http://localhost:3000/album")  # Replace with the actual URL
+    driver.get("http://localhost:3000/album")
 
     # Step 3: Locate the search box element
     search_box = driver.find_element(By.CLASS_NAME, "search-box")

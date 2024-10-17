@@ -11,7 +11,9 @@ const LoginPage = () => {
 
   const handleLogin = async () => {
     try {
-      await signInWithPopup(auth, googleProvider);
+      const result = await signInWithPopup(auth, googleProvider);
+      const token = await result.user.getIdToken(); // Get the token
+      localStorage.setItem('authToken', token); // Store the token in localStorage
       navigate('/home');
     } catch (error) {
       setError(error.message);
